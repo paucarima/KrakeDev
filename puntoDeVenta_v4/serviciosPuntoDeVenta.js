@@ -91,7 +91,7 @@ calcularValorTotal = function () {
     /*
 
         Ejemplo: 
-            Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.6
+            Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
         Si funciona, hacer un commit
         
     */
@@ -100,6 +100,8 @@ calcularValorTotal = function () {
         let resumen = "Valor a pagar por "+cantidad+" "+nombreProducto+" con "+valorDescuento+"% de descuento: USD "+valorConDescuento;
        
         mostrarTexto("lblResumen", resumen);
+
+        limpiar();
 }
 limpiar = function () {
     /*
@@ -107,6 +109,11 @@ limpiar = function () {
         Dejar todos los textos de los montos con el valor 0.0
         Si funciona, hacer un commit
      */
+
+        mostrarTextoEnCaja("txtProducto","----");
+        mostrarTextoEnCaja("txtCantidad","0.0");
+        mostrarTextoEnCaja("txtPrecio","0.0");
+        mostrarTextoEnCaja("txtPorcentajeDescuento","0%");
 }
 
 calcularSubtotal=function(precio,unidad){
