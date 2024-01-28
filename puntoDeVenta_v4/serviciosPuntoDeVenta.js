@@ -66,7 +66,9 @@ calcularValorTotal = function () {
             Si el caso de prueba es exitoso, hacer un commit
         */
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
+    valorTotal = calcularTotal(valorSubtotal, valorDescuento, valorIVA);
     //11. Mostrar el resultado en el componente lblTotal
+    mostrarTexto("lblTotal", valorTotal);
     /*
         Caso de prueba: 
             - cantidad: 10
@@ -112,5 +114,9 @@ calcularIVA=function(valorSubtotalDeIva){
     let valorDescuento=recuperarTextoFloat("lblDescuento");
     let iva=(valorSubtotalDeIva-valorDescuento)*0.12;
     return iva;  
+}
+calcularTotal=function(valorSubtotal, porcentaje, valorIVA){
+    let totalEsperado=valorSubtotal-porcentaje+valorIVA;
+    return totalEsperado;
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
