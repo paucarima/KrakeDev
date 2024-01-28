@@ -34,7 +34,9 @@ calcularValorTotal = function () {
         Si el caso de prueba es exitoso, hacer un commit
      */
     //6. Invocar a calcularValorDescuento y lo que devuelve guardar en la variable valorDescuento
+    valorDescuento=calcularValorDescuento(valorSubtotal,porcentajeDescuento)
     //7. Mostrar el resultado en el componente lblDescuento
+    mostrarTexto("lblDescuento",valorDescuento);
     /*
         Caso de prueba: 
             - cantidad: 10 
@@ -98,5 +100,10 @@ calcularSubtotal=function(precio,unidad){
     let subtotal=precio*unidad;
     return subtotal;
 
+}
+
+calcularValorDescuento=function(subtotal,porcentaje){
+    let valorDesc=(subtotal * porcentaje)/100 ;
+    return valorDesc;
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
