@@ -97,7 +97,7 @@ calcularValorTotal = function () {
     */
         valorConDescuento= calcularDescuento(valorSubtotal,valorDescuento);
 
-        let resumen = "Valor a pagar por "+cantidad+" "+nombreProducto+" con "+valorDescuento+"% de descuento: USD "+valorConDescuento;
+        let resumen = "Valor a pagar por "+cantidad+" "+nombreProducto+" con "+porcentajeDescuento+"% de descuento: USD "+valorConDescuento;
        
         mostrarTexto("lblResumen", resumen);
 
