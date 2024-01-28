@@ -49,7 +49,7 @@ calcularValorTotal = function () {
         Si el caso de prueba es exitoso, hacer un commit
      */
     //8. Invocar a calcularIVA y lo que devuelve guardar en la variable valorIVA
-    valorIVA=calcularIVA(valorSubtotal);
+    valorIVA=calcularIVA(valorSubtotal,valorDescuento);
     // El IVA debe calcularse sobre el valor del subtotal menos el descuento
     //9. Mostrar el resultado en el componente lblValorIVA 
     mostrarTexto("lblValorIVA",valorIVA);
@@ -95,7 +95,7 @@ calcularValorTotal = function () {
         Si funciona, hacer un commit
         
     */
-        valorConDescuento= calcularDescuento(valorSubtotal);
+        valorConDescuento= calcularDescuento(valorSubtotal,valorDescuento);
 
         let resumen = "Valor a pagar por "+cantidad+" "+nombreProducto+" con "+valorDescuento+"% de descuento: USD "+valorConDescuento;
        
@@ -126,8 +126,8 @@ calcularValorDescuento=function(subtotal,porcentaje){
     let valorDesc=(subtotal * porcentaje)/100 ;
     return valorDesc;
 }
-calcularIVA=function(valorSubtotalDeIva){
-    let valorDescuento=recuperarTextoFloat("lblDescuento");
+calcularIVA=function(valorSubtotalDeIva,valorDescuento){
+    //let valorDescuento=recuperarTextoFloat("lblDescuento");
     let iva=(valorSubtotalDeIva-valorDescuento)*0.12;
     return iva;  
 }
@@ -135,8 +135,7 @@ calcularTotal=function(valorSubtotal, porcentaje, valorIVA){
     let totalEsperado=valorSubtotal-porcentaje+valorIVA;
     return totalEsperado;
 }
-calcularDescuento=function (valorSubtotal) {
-    let valorDescuento=recuperarTextoFloat("lblDescuento");
+calcularDescuento=function (valorSubtotal,valorDescuento) {
     let descuento=valorSubtotal-valorDescuento;
     return descuento; 
 }

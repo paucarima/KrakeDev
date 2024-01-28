@@ -34,12 +34,12 @@ recuperarFloat = function (idComponente) {
     let valorFlotante = parseFloat(valorCaja);
     return valorFlotante;
 }
-recuperarTextoFloat = function (idComponente) {
+/*recuperarTextoFloat = function (idComponente) {
     let componente;
     let valorIngresado;
     componente = document.getElementById(idComponente);
     valorIngresado = componente.innerText;
     let valorFlotante=parseFloat(valorIngresado);
     return valorFlotante;
-}
+}*/
 
