@@ -25,6 +25,9 @@ calcularValorTotal = function () {
     // los parametros cuando invoca la funcion.
     //5. Mostrar valorSubtotal en el componente lblSubtotal
     mostrarTexto("lblSubtotal",valorSubtotal);
+
+    
+
     // Utilizar mostrarTexto
         /*
         Caso de prueba: 
@@ -86,11 +89,17 @@ calcularValorTotal = function () {
             
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
     /*
-        Ejemplo: 
-            Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
-        Si funciona, hacer un commit
-    */
 
+        Ejemplo: 
+            Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.6
+        Si funciona, hacer un commit
+        
+    */
+        valorConDescuento= calcularDescuento(valorSubtotal);
+
+        let resumen = "Valor a pagar por "+cantidad+" "+nombreProducto+" con "+valorDescuento+"% de descuento: USD "+valorConDescuento;
+       
+        mostrarTexto("lblResumen", resumen);
 }
 limpiar = function () {
     /*
@@ -118,5 +127,10 @@ calcularIVA=function(valorSubtotalDeIva){
 calcularTotal=function(valorSubtotal, porcentaje, valorIVA){
     let totalEsperado=valorSubtotal-porcentaje+valorIVA;
     return totalEsperado;
+}
+calcularDescuento=function (valorSubtotal) {
+    let valorDescuento=recuperarTextoFloat("lblDescuento");
+    let descuento=valorSubtotal-valorDescuento;
+    return descuento; 
 }
 /* SI TODO FUNCIONA, HACER UN PUSH */
