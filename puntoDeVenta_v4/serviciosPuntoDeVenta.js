@@ -101,7 +101,7 @@ calcularValorTotal = function () {
        
         mostrarTexto("lblResumen", resumen);
 
-        limpiar();
+     
 }
 limpiar = function () {
     /*
