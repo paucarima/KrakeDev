@@ -64,6 +64,7 @@ esPrecioValido = function (precio, idComponenteError) {
 }
 esProductoValido = function (producto, idComponenteError) {
     let hayErrores = false;
+    //para admintir solo letras
     if (typeof producto !=='string' || producto=="") {
         mostrarTexto(idComponenteError, "Campo Obligatorio");
         hayErrores = true;
