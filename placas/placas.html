@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="placas.js"></script>
+    <script src="serviciosPlacas.js"></script>
+    <script src="utilitarios.js"></script>
+    <script src="utilitariosCadenas.js"></script>
+    <link rel="stylesheet" href="placas.css" />
+</head>
+
+<body>
+    <div class="principal">
+        <div class="logoEscuela">
+            <img src="./imagenes/logoKrakeDev.png" width="80%" />
+        </div>
+        <div class="contenido">
+            <div class="titulo">
+                INGRESE LA PLACA
+            </div>
+
+
+            <div class="ingresoDatos">
+                <div class="tituloCampo">
+                    PLACA
+                </div>
+                <div>
+                    <input type="text" class="cajaTexto" id="txtPlaca" />
+                    <div class="error" id="lblErrorPlacaM"></div>
+                    <div class="error" id="lblErrorPlacaM1"></div>
+                    <div class="error" id="lblErrorPlacaM2"></div>
+                    <div class="error" id="lblErrorPlacaM3"></div>
+                    <div class="error" id="lblErrorPlacaG"></div>
+                    <div class="error" id="lblErrorPlacaD"></div>
+                    <div class="error" id="lblErrorPlacaD5"></div>
+                    <div class="error" id="lblErrorPlacaD6"></div>
+                    <div class="error" id="lblErrorPlacaD7"></div>
+                    <div class="error" id="lblErrorPlacaD8"></div>
+                </div>
+            </div>
+            <div class="botones">
+                <div class="contenedorBoton">
+                    <input type="button" value="VALIDAR" class="estiloBoton" onclick="validarPlaca();" />
+                </div>
+
+                <div class="contenedorBoton">
+                    <input type="button" value="LIMPIAR" class="estiloBoton" onclick="limpiar();" />
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="areaResultado">
+            <div class="resultado">
+                <div>
+                    OBSERVACIÓN:
+                </div>
+            </div>
+            <div class="resultado">
+                <div id="lblValidacion">
+                    -
+                </div>
+            </div>
+            <div class="resultado">
+                <div id="lblEstructura">
+                    -
+                </div>
+            </div>
+            <div class="resultado">
+                <div>
+                    PROVINCIA:
+                </div>
+                    <div id="lblProvincia">
+                        -
+                    </div>
+            </div>
+            <div class="resultado">
+                <div>
+                    TIPO:
+                </div>
+                    <div id="lblTipo">
+                        -
+                    </div>
+            </div>
+            <div class="resultado">
+                <div>
+                    PICA Y PLACA:
+                </div>
+                    <div id="lblPicoPlaca">
+                        -
+                    </div>
+            </div>
+            <div class="imagenResultado">
+                <img src="./imagenes/notas.png" width="50%" />
+            </div>
+        </div>
+
+</body>
+
+</html>
