@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="juego.css" rel="stylesheet" />
+    <script src="serviciosJuego.js"></script>
+    <script src="utilitarios.js"></script>
+    <script src="juego.js"></script>
+</head>
+
+<body>
+    <div class="principal">
+        <div class="titulo">
+            JUEGA PIEDRA PAPEL O TIJERA
+        </div>
+
+        <div class="imagen">
+            <img src="./imagenes/papel.gif" width="150px" id="imgJuegoP" onclick="jugar('papel');" />
+            <img src="./imagenes/tijera.gif" width="150px" id="imgJuegoT" onclick="jugar('tijera');" />
+            <img src="./imagenes/piedra.gif" width="150px" id="imgJuegoPI" onclick="jugar('piedra');" />
+
+
+        </div>
+
+        <div class="resultado">
+            <h1>Tu:</h1>
+            <h1 id="lblPuntosUsu"> 0 PTS</h1>
+
+            <h1> Computadora: </h1>
+            <h1 id="lblPuntosC"> 0 PTS</h1>
+
+        </div>
+        <div class="titulo">
+            COMPUTADORA:
+        </div>
+
+        <div class="imagen">
+            <img src="" width="150px" id="imgJuego" />
+        </div>
+        
+        <div class="imagen">
+            <h1 id="lblGanador">?</h1>
+        </div>
+
+
+        <div class="botones">
+            <input type="button" value="NUEVA PARTIDA" class="estiloBoton" onclick="limpiar();" />
+        </div>
+        <div class="espacio"></div>
+
+    </div>
+</body>
+
+</html>
