@@ -1,5 +1,6 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
 let palabraSecreta;
+let letrasEncontradas;
 
 esMayuscula = function (caracter) {
     let codigoLetra;
@@ -48,5 +49,19 @@ mostrarLetra = function (letra, posicion) {
         mostrarTexto("div4", letra);
     }
 
+}
 
+validar = function (letra) {
+     
+    for (let posicion = 0; posicion < palabraSecreta.length - 1; posicion++) {
+        
+        let caracterSecreto = palabraSecreta.charAt(posicion);
+        let caracterLetra=letra.charAt(posicion);
+        if (caracterSecreto==caracterLetra) {
+            mostrarLetra(caracterLetra,posicion);
+            letrasEncontradas++;
+            //console.log("El CARACTER " + caracterLetra+ " posicion " + posicion);
+        }  
+
+    }
 }
