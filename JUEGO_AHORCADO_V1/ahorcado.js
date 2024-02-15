@@ -1,5 +1,7 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
-esMayuscula = function name(caracter) {
+let palabraSecreta;
+
+esMayuscula = function (caracter) {
     let codigoLetra;
     for(let i=0; i<caracter.length; i++){
         codigoLetra=caracter.charCodeAt(i);
@@ -10,4 +12,15 @@ esMayuscula = function name(caracter) {
         }
     }
     console.log("Mayusculas: "+codigoLetra);  
+}
+
+guardarPalabra=function () {
+   let palabra= recuperarTexto("txtSecreta");
+   if (!(palabra.length==5) && !(esMayuscula(palabra)==false)) {
+      alert("La contrasenia debe tener 5 letras mayusculas");
+      
+   } else {
+    palabraSecreta=palabra;
+    console.log("Guardada: " +palabraSecreta);
+   }
 }
