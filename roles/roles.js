@@ -101,17 +101,7 @@ agregarEmpleado = function (empleado) {
         alert("Ya existe el empleado con la cedula: " + empleado.cedula + ". Intente de nuevo.");
     }
 }
-/*Para saber si es un nuevo cliente, validar el valor de la variable
-esNuevo.
-Si esNuevo es true, entonces:
-• Crear un objeto empleado sin atributos
-• Agregar al objeto los atributos cedula, nombre, apellido, sueldo,
-con los valores que se recuperaron de las cajas de texto.
-• Invocar a agregarEmpleado
-• Guardar el retorno de agregarEmpleado a una variable y en base
-a este retorno: Si guardó el empleado mostrar un alert con el
-mensaje EMPLEADO GUARDADO CORRECTAMENTE y llamar
-a la función que muestra los empleados en la tabla, caso*/
+
 guardar = function () {
 
     let valorCedula = recuperarTexto("txtCedula");
