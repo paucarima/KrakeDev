@@ -295,14 +295,11 @@ calcularRol=function(){
     let valorDescuento=recuperarFloatDivCaja("txtDescuentos");
     if (valorDescuento % 1 == 0 || isNaN(valorDescuento)) {
         alert ("El descuento es decimal");
-    }
-    if (valorDescuento<0 ) {
+    }else if (valorDescuento<0 ) {
         alert ("El descuento debe ser mayor cero");
-    }
-    if (valorDescuento>valorSueldo) {
+    }else if (valorDescuento>valorSueldo) {
         alert ("El descuento no puede superar al sueldo");
-    }
-    if (valorDescuento!=false) {
+    }else{
         let iess=calcularAporteEmpleado(valorSueldo).toFixed(2);
         mostrarTexto("infoIESS",iess);
         let iessFloat=parseFloat(iess);
