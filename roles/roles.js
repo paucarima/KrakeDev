@@ -266,3 +266,49 @@ No retorna nada* */
        
      }
  }
+/**calcularRol
+No recibe parámetros
+Toma de la pantalla los valores de sueldo y descuentos. En descuentos
+validar que sea un flotante, el valor menor es 0 y el valor mayor es el
+sueldo del empleado.
+Invocar a la función calcularAporteEmpleado, guardar el resultado en
+una variable y mostrar en pantalla
+Invocar a la función calcular ValorAPagar, guardar el resultado en una
+variable y mostrar en pantalla
+No retorna nada*/
+
+calcularAporteEmpleado=function(sueldo){
+   
+    let porcentaje=(9.45/100)*sueldo;
+    return porcentaje;
+}
+
+calcularValorAPagar=function (sueldo,iess,descuento) {
+
+    let totalDescuentos=descuento+iess;
+    let salarioNeto=sueldo-totalDescuentos;
+    return salarioNeto;
+}
+
+calcularRol=function(){
+    let valorSueldo=recuperarFloatDiv("infoSueldo");
+    let valorDescuento=recuperarFloatDivCaja("txtDescuentos");
+    if (valorDescuento % 1 == 0 || isNaN(valorDescuento)) {
+        alert ("El descuento es decimal");
+    }
+    if (valorDescuento<0 ) {
+        alert ("El descuento debe ser mayor cero");
+    }
+    if (valorDescuento>valorSueldo) {
+        alert ("El descuento no puede superar al sueldo");
+    }
+    if (valorDescuento!=false) {
+        let iess=calcularAporteEmpleado(valorSueldo).toFixed(2);
+        mostrarTexto("infoIESS",iess);
+        let iessFloat=parseFloat(iess);
+        let valorSalarioNeto=calcularValorAPagar(valorSueldo,iessFloat,valorDescuento).toFixed(2);
+        mostrarTexto("infoPago",valorSalarioNeto);
+
+    }
+ 
+}
