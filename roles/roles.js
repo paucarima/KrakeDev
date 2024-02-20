@@ -240,3 +240,29 @@ contarMayusculas = function (cadena) {
     return contadorMayusculas;
 }
 
+//rol de pagos
+/*buscarPorRol
+No recibe parámetros
+Toma el valor ingresado por el usuario en la caja de texto
+Invoca a buscarEmpleado, si el empleado existe, muestra los valores de
+cedula y saldo en los divs correspondientes, en el caso del nombre,
+debe mostrar concatenado el nombre con el apellido, si el empleado no
+existe mostrar un alert
+No retorna nada* */
+
+ buscarPorRol = function () {
+  let valorCedula= recuperarTexto("txtBusquedaCedulaRol");
+  let rastrearEmpleado=buscarEmpleado(valorCedula);
+  let juntarCadena;
+
+     if (rastrearEmpleado==true) {
+        alert("El empleado no existe");
+     }else{
+        
+        mostrarTexto("infoCedula", rastrearEmpleado.cedula);
+        juntarCadena=rastrearEmpleado.nombre+" "+rastrearEmpleado.apellido;
+        mostrarTexto("infoNombre", juntarCadena);
+        mostrarTexto("infoSueldo", rastrearEmpleado.sueldo);
+       
+     }
+ }
