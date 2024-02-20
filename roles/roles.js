@@ -98,23 +98,7 @@ buscarEmpleado = function (cedula) {
 
     return empleadoEncontrado;
 }
-/**En la función guardar
-• Con la variable esNuevo se sabe si se está creando un cliente nuevo o se
-está modificando uno. Cuando presionamos el botón nuevo, la variable
-esNuevo se coloca en true, en algún momento debe hacerse false
-nuevamente. Dentro de la función guardar, cuando ya se guarda el empleado
-de forma exitosa, colocar la variable esNuevo en false.
-• Si el empleado no es nuevo, debemos modificar los datos, para esto:
-Invocar a la función buscarEmpleado y guardar el retorno en una
-vanable.
-Setear los datos de nombre apellido y saldo de este empleado
-recuperado, con los valores correspondientes ingresados en la caja de texto.
-Mostrar un mensaje EMPLEADO MODIFICADO EXITOSAMENTE
-Invocar a la función que pinta la tabla de empleados, validar que se
-modificaron los datos
-Luego de guardar exitosamente, deshabilitar las 4 cajas y el botón
-GUARDAR
-Si todo funciona bien hacer un commit */
+
 agregarEmpleado = function (empleado) {
     esNuevo = buscarEmpleado(empleado.cedula);
     if (esNuevo == true) {
@@ -219,6 +203,15 @@ validar = function (cedula, nombre, apellido, sueldo) {
     return errorCampo;
 
 
+}
+
+limpiar=function(){
+    mostrarTextoEnCaja("txtCedula","");
+    mostrarTextoEnCaja("txtNombre","");
+    mostrarTextoEnCaja("txtApellido","");
+    mostrarTextoEnCaja("txtSueldo","");
+    esNuevo=false;
+    ejecutarGuardar();
 }
 contarDigito = function (cadena) {
     let digito;
