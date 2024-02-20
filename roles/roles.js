@@ -76,6 +76,15 @@ ejecutarGuardar = function () {
     deshabilitarComponente("btnGuardar");
     esNuevo = false;
 }
+
+ejecutarBusquedaHabilitar = function () {
+
+    deshabilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+
+}
 buscarEmpleado = function (cedula) {
     let elementoEmpleado;
     empleadoEncontrado = true;
@@ -89,7 +98,23 @@ buscarEmpleado = function (cedula) {
 
     return empleadoEncontrado;
 }
-
+/**En la función guardar
+• Con la variable esNuevo se sabe si se está creando un cliente nuevo o se
+está modificando uno. Cuando presionamos el botón nuevo, la variable
+esNuevo se coloca en true, en algún momento debe hacerse false
+nuevamente. Dentro de la función guardar, cuando ya se guarda el empleado
+de forma exitosa, colocar la variable esNuevo en false.
+• Si el empleado no es nuevo, debemos modificar los datos, para esto:
+Invocar a la función buscarEmpleado y guardar el retorno en una
+vanable.
+Setear los datos de nombre apellido y saldo de este empleado
+recuperado, con los valores correspondientes ingresados en la caja de texto.
+Mostrar un mensaje EMPLEADO MODIFICADO EXITOSAMENTE
+Invocar a la función que pinta la tabla de empleados, validar que se
+modificaron los datos
+Luego de guardar exitosamente, deshabilitar las 4 cajas y el botón
+GUARDAR
+Si todo funciona bien hacer un commit */
 agregarEmpleado = function (empleado) {
     esNuevo = buscarEmpleado(empleado.cedula);
     if (esNuevo == true) {
@@ -97,9 +122,23 @@ agregarEmpleado = function (empleado) {
         alert("EMPLEADO GUARDADO CORRECTAMENTE ");
         mostrarEmpleados();
         ejecutarGuardar();
+        
     } else {
-        alert("Ya existe el empleado con la cedula: " + empleado.cedula + ". Intente de nuevo.");
+        alert("Ya existe el empleado con la cedula: " + empleado.cedula);
+        esNuevo=false
     }
+}
+
+modificarEmpleado= function(empleado){
+    empleadoEncontrado=buscarEmpleado(empleado.cedula);
+    if (empleadoEncontrado!=false) {
+        empleadoEncontrado.nombre=empleado.nombre;
+        empleadoEncontrado.apellido=empleado.apellido;
+        empleadoEncontrado.apellido=empleado.apellido;
+        empleadoEncontrado.apellido=empleado.sueldo;
+        alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+       
+}
 }
 
 guardar = function () {
@@ -118,8 +157,28 @@ guardar = function () {
         nuevoEmpleado.sueldo = valorSueldo;
         agregarEmpleado(nuevoEmpleado);
 
+        modificarEmpleado(nuevoEmpleado);
+        mostrarEmpleados();
+        ejecutarGuardar();
+        
     } else {
         console.log("hay errores: " + resultados);//Muestra mensajes de error
+    }
+   
+
+}
+
+ejecutarBusqueda = function () {
+    let valorCedula = recuperarTexto("txtBusquedaCedula");
+    let rastrearEmpleado = buscarEmpleado(valorCedula);
+    if (rastrearEmpleado == true) { //verdadero pq es  nuevo o no encotro
+        alert("EL EMPLEADO NO EXISTE");
+    } else {
+        mostrarTextoEnCaja("txtCedula", rastrearEmpleado.cedula);
+        mostrarTextoEnCaja("txtNombre", rastrearEmpleado.nombre);
+        mostrarTextoEnCaja("txtApellido", rastrearEmpleado.apellido);
+        mostrarTextoEnCaja("txtSueldo", rastrearEmpleado.sueldo);
+        ejecutarBusquedaHabilitar();
     }
 
 }
@@ -187,3 +246,4 @@ contarMayusculas = function (cadena) {
     console.log("Mayusculas: " + contadorMayusculas);
     return contadorMayusculas;
 }
+
